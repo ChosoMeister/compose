@@ -1,0 +1,12 @@
+version: "3"
+services:
+  filebrowser:
+    image: filebrowser/filebrowser
+    container_name: file-browser
+    ports:
+      - 81:80
+    volumes:
+      - /:/srv
+# mkdir -p /root/filebrowser/config && touch /root/filebrowser/config/filebrowser.db
+      - /root/filebrowser/config/filebrowser.db:/database.db
+    restart: always
