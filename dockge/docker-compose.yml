@@ -8,6 +8,6 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /docker/dockge/data:/app/data
-      - /docker/dockge/stacks:/root/dockge/stacks
+      - /docker/dockge/stacks:/docker/dockge/stacks
     environment:
-      - DOCKGE_STACKS_DIR=/root/dockge/stacks
+      - DOCKGE_STACKS_DIR=/docker/dockge/stacks
