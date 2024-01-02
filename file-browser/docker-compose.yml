@@ -7,6 +7,6 @@ services:
       - 81:80
     volumes:
       - /:/srv
-# mkdir -p /root/filebrowser/config && touch /root/filebrowser/config/filebrowser.db
-      - /root/filebrowser/config/filebrowser.db:/database.db
+# mkdir -p /docker/filebrowser/config && touch /docker/filebrowser/config/filebrowser.db
+      - /docker/filebrowser/config/filebrowser.db:/database.db
     restart: always
