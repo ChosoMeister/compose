@@ -8,6 +8,8 @@ services:
       - /docker/uptime-kuma:/app/data
     container_name: uptime-kuma
     image: louislam/uptime-kuma:latest
+    environment:
+      - UPTIME_KUMA_DISABLE_FRAME_SAMEORIGIN=true
 volumes:
   uptime-kuma: {}
 networks: {}
