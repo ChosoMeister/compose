@@ -8,5 +8,5 @@ services:
     volumes:
       - /:/srv
 # mkdir -p /docker/filebrowser/config && touch /docker/filebrowser/config/filebrowser.db
-      - /docker/filebrowser/config/filebrowser.db:/database.db
+      - /docker/file-browser/config/filebrowser.db:/database.db
     restart: always
