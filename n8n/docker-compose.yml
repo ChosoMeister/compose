@@ -12,3 +12,7 @@ services:
       - ${DATA_FOLDER}/.n8n:/home/node/.n8n
       - ${LOCAL_FILES}:/files
 networks: {}
+#if you hae error to accesss /home/node ...
+#stop compose the run this command below
+#docker run -it --rm -v n8n_data:/home/data bash chown 1000:100 -R home/data
+#then start docker agian
