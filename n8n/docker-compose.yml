@@ -1,18 +1,20 @@
-version: "3"
+name: n8n
 services:
   n8n:
     image: docker.n8n.io/n8nio/n8n
-    user: root
     restart: always
     ports:
-      - 5678:5678
+      - 6789:6789
     environment:
-      - N8N_PORT=5678
+      - N8N_HOST=n8n.domain.com
+      - N8N_PORT=6789
+      - N8N_PROTOCOL=http
+      - NODE_ENV=production
+      - WEBHOOK_URL=https://n8n.domain.com/
+      - GENERIC_TIMEZONE=Asia/Tehran
     volumes:
-      - ${DATA_FOLDER}/.n8n:/home/node/.n8n
-      - ${LOCAL_FILES}:/files
+      - /docker/n8n/n8n_data:/home/node/.n8n
+      - /docker/n8n/local_files:/files
+#docker run -it --rm -v /docker/n8n/n8n_data:/home/data bash chown 1000:100 -R home/data
+#docker run -it --rm -v /docker/n8n/local_files:/files bash chown 1000:100 -R files
 networks: {}
-#if you hae error to accesss /home/node ...
-#stop compose the run this command below
-#docker run -it --rm -v n8n_data:/home/data bash chown 1000:100 -R home/data
-#then start docker agian
